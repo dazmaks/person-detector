@@ -17,4 +17,4 @@ build/%.o: src/%.c
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 clean:
-	rm -rf detector *.exe
+	rm -rf build detector *.exe
