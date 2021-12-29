@@ -258,7 +258,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "person-detector"
+name = "person_detector"
 version = "0.1.0"
 dependencies = [
  "image",
