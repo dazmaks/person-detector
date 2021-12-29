@@ -1,0 +1,11 @@
+[package]
+name = "person-detector"
+version = "0.1.0"
+edition = "2021"
+authors = ["Maxim Plotnikov", "Roman Hrakin"]
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+image = "0.23.14"
