@@ -31,7 +31,7 @@ pub fn rgb_check((r, g, b): (u8, u8, u8)) -> bool {
 }
 
 // Basic tsl + rgb check
-pub fn tlsrgb_check((r, g, b): (u8, u8, u8)) -> bool {
+pub fn tslrgb_check((r, g, b): (u8, u8, u8)) -> bool {
 	let (t, s) = ts_from_rgb((r, g, b));
 	rgb_check((r, g, b)) && ( t - 0.578 ).abs() < 0.059 && (s - 0.157).abs() < 0.118
 }

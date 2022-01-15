@@ -12,7 +12,7 @@ pub fn ts_from_rgb((r, g, b): (u8, u8, u8)) -> (f64, f64) {
 
 	let r1 = rf / rgbsum - 1. / 3.;
 	let g1 = gf / rgbsum - 1. / 3.;
-	let tcalc = f64::atan2(r1, g1) / PI2;
+	let tcalc = f64::atan(r1 / g1) / PI2;
 	let t = if g1 > 0. {
 		tcalc + 1. / 4.
 	} else if g1 < 0. {
