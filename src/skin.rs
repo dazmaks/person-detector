@@ -26,7 +26,7 @@ pub fn rgb_check((r, g, b): (u8, u8, u8)) -> bool {
 	g > 40 &&
 	r > g &&
 	r > b &&
-	i8::abs(r as i8 - g as i8) > 15 &&
+	(r - g) > 15 &&
 	max3(r, g, b) - min3(r, g, b) > 15
 }
 

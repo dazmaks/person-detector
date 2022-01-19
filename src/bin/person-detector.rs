@@ -1,8 +1,7 @@
 extern crate person_detector;
 extern crate image;
 
-//use person_detector::skin::rgb_check;
-use person_detector::skin::rtslrgb_check;
+use person_detector::skin::tslrgb_check;
 
 use image::Rgb;
 
@@ -23,7 +22,7 @@ fn main() {
 		for y in 0..height {
 			let pixel = mut_img.get_pixel(x, y);
 
-			if rtslrgb_check((pixel[0], pixel[1], pixel[2])) {
+			if tslrgb_check((pixel[0], pixel[1], pixel[2])) {
 				mut_img.put_pixel(x, y, WHITE);
 			} else {
 				mut_img.put_pixel(x, y, BLACK);
