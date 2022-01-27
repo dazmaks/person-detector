@@ -2,7 +2,7 @@ use std::f64::consts::PI;
 
 const PI2: f64 = 2. * PI;
 
-pub fn ts_from_rgb((r, g, b): (u8, u8, u8)) -> (f64, f64) {
+pub fn ts_from_rgb(r: u8, g: u8, b: u8) -> (f64, f64) {
 	let (rf, gf, bf) = (r as f64, g as f64, b as f64);
 	let rgbsum = rf + gf + bf;
 
@@ -17,6 +17,5 @@ pub fn ts_from_rgb((r, g, b): (u8, u8, u8)) -> (f64, f64) {
 		0.
 	};
 
-	let s = (9. / 5. * ( r1 * r1 + g1 * g1 )).sqrt();
-	(t, s)
+	(t, (9. / 5. * ( r1 * r1 + g1 * g1 )).sqrt())
 }

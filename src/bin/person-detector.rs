@@ -22,11 +22,13 @@ fn main() {
 		for y in 0..height {
 			let pixel = mut_img.get_pixel(x, y);
 
-			if tslrgb_check((pixel[0], pixel[1], pixel[2])) {
-				mut_img.put_pixel(x, y, WHITE);
+			let color = if tslrgb_check(pixel[0], pixel[1], pixel[2]) {
+				WHITE
 			} else {
-				mut_img.put_pixel(x, y, BLACK);
+				BLACK
 			};
+
+			mut_img.put_pixel(x, y, color);
 		}
 	}
 
