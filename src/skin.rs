@@ -1,25 +1,9 @@
 use crate::tsl::ts_from_rgb;
 
-fn min(a: u8,b: u8) -> u8 {
-	if a < b { a } else { b }
-}
-
-fn max(a: u8,b: u8) -> u8 {
-	if a > b { a } else { b }
-}
-
-fn min3(a: u8, b: u8, c: u8) -> u8 {
-	min(min(a, b), c)
-}
-
-fn max3(a: u8, b: u8, c: u8) -> u8 {
-	max(max(a, b), c)
-}
-
 // Basic rgb check
 pub fn rgb_check(r: u8, g: u8, b: u8) -> bool {
 	r > 90 && g > 40 && r > g && r > b && r - g > 15 &&
-	max3(r, g, b) - min3(r, g, b) > 15
+	r.max(g).max(b) - r.min(g).min(b) > 15
 }
 
 // Basic tsl + rgb check
